@@ -1,5 +1,5 @@
 // 線上永遠抓最新，離線用上次存下來的
-const CACHE='see-your-good-4738e47ee6';
+const CACHE='see-your-good-3f3a0b671e';
 const SHELL=['./','./index.html','./manifest.json','./icons/icon-180.png','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
